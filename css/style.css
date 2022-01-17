@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+}
+
+input.form-control:focus, 
+.btn.btn-primary:focus, 
+.btn.btn-danger:focus, 
+.btn.btn-warning:focus, 
+.form-select:focus, 
+.btn.btn-success:focus {
+    box-shadow: none;
+}
+
+.ocultar {
+    display: none;
+}
+
+.t-b {
+    margin: 6rem;
+}
+.borde {
+    border-radius: 10px;
+}
