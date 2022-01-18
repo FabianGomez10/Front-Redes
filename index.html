@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Iconos bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Mis estilos -->
     <link rel="stylesheet" href="css/style.css">
     <title>Inicio</title>
 </head>
 
 <body>
+    <!-- Inicio formulario y tabla conexiones de red -->
     <div class="container mt-5 bg-secondary bg-opacity-25 p-4 borde">
         <div class="row">
             <div class="col">
@@ -20,7 +24,6 @@
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-
                     </div>
                     <div class="mb-3">
                         <label for="tipoDeCifrado" class="form-label">Tipo de cifrado:</label>
@@ -47,7 +50,6 @@
                                 class="bi bi-arrow-repeat me-1"></i>Actualizar
                             Conexion</button>
                     </div>
-
                 </form>
             </div>
             <div class="col">
@@ -58,10 +60,12 @@
                 <div class="table-responsive-lg mt-2" id="pintarTablaRed">
 
                 </div>
-
             </div>
         </div>
     </div>
+    <!-- Fin formulario y tabla conexiones de red -->
+
+    <!-- Inicio formulario y tabla de dispositivos electronicos -->
     <div class="container t-b bg-secondary bg-opacity-25 p-4 borde">
         <div class="row">
             <div class="col">
@@ -69,7 +73,6 @@
                     <div class="mb-3">
                         <label for="mac" class="form-label">Mac:</label>
                         <input type="text" class="form-control" id="mac" placeholder="Mac" required>
-
                     </div>
                     <div class="mb-3">
                         <label for="tipo" class="form-label">Tipo:</label>
@@ -109,7 +112,6 @@
                             Dispositivo</button>
 
                     </div>
-
                 </form>
             </div>
             <div class="col">
@@ -120,18 +122,25 @@
                 <div class="table-responsive-lg mt-2" id="pintarTabla">
 
                 </div>
-
             </div>
         </div>
     </div>
+    <!-- Fin formulario y tabla de dispositivos electronicos -->
 
+    <!-- script jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <!-- script popperjs -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
         </script>
+
+    <!-- script bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
         </script>
+
+    <!-- script mis funciones crud -->
     <script src="js/funciones.js" type="text/javascript"></script>
 
 </body>
