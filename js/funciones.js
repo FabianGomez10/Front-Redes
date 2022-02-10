@@ -1,4 +1,5 @@
 let tipoConexion;
+
 /**
  * Cuando carga la pagina
  */
@@ -125,8 +126,8 @@ function editar(mac) {
         type: "GET",
         dataType: "json",
         success: function (respuesta) {
-            $("#agregarDispositivo").attr('style', 'display:none');
-            $("#actualizarDispositivo").attr('style', 'display:block');
+            $("#agregarDispositivo").addClass('d-none');
+            $("#actualizarDispositivo").removeClass('d-none');
             $("#mac").prop('disabled', true);
             $("#mac").val(respuesta.mac);
             $("#tipo").val(respuesta.tipo);
@@ -149,15 +150,16 @@ function editar(mac) {
  */
 $("#enviarDispositivo").submit(function (event) {
     event.preventDefault();
+    let id = $("#conexionA").val();
     $.ajax({
-        url: "http://localhost:8080/api/dispositivoelectronico/all",
+        url: `http://localhost:8080/api/dispositivoelectronico/filter/${id}`,
         type: "GET",
         dataType: "json",
         success: function (respuesta) {
             let maximo = 0;
             respuesta.forEach(element => {
                 if (element.conexionActual.tipo == $("#conexionA").val()) {
-                    maximo++;
+                    maximo ++;
                 }
             });
             if (maximo < 3) {
@@ -230,13 +232,14 @@ $("#actualizarDispositivo").click(function (event) {
         },
         success: function () {
             alert("Se actualizo correctamente");
-            $("#agregarDispositivo").attr("style", "display: block");
-            $("#actualizarDispositivo").attr("style", "display: none");
+            $("#agregarDispositivo").removeClass("d-none");
+            $("#actualizarDispositivo").addClass("d-none");
             $("#mac").prop('disabled', false);
             $("#mac").val("");
             $("#tipo").val("");
             $("#ipAsignada").val("");
             $("#conexionA").val("");
+            $("#mac").focus();
             consultarTodo();
         }
     });
@@ -365,8 +368,8 @@ function editarConexion(tipo){
         type: "GET",
         dataType: "json",
         success: function (respuesta) {
-            $("#agregarConexion").attr('style', 'display:none');
-            $("#actualizarConexion").attr('style', 'display:block');
+            $("#agregarConexion").addClass('d-none');
+            $("#actualizarConexion").removeClass('d-none');
             $("#nombre").val(respuesta.nombre);
             $("#tipoDeCifrado").val(respuesta.tipoDeCifrado);
             $("#usuarioConexión").val(respuesta.usuarioConexión);
@@ -401,8 +404,8 @@ $("#actualizarConexion").click(function (event) {
         },
         success: function () {
             alert("Se actualizo correctamente");
-            $("#agregarConexion").attr("style", "display: block");
-            $("#actualizarConexion").attr("style", "display: none");
+            $("#agregarConexion").removeClass("d-none");
+            $("#actualizarConexion").addClass("d-none");
             $("#nombre").val("");
             $("#tipoDeCifrado").val("");
             $("#usuarioConexión").val("");

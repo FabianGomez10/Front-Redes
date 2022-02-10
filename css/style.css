@@ -11,10 +11,6 @@ input.form-control:focus,
     box-shadow: none;
 }
 
-.ocultar {
-    display: none;
-}
-
 .t-b {
     margin: 6rem;
 }
